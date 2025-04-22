@@ -1,0 +1,94 @@
+body {
+  background: #9C3334;
+
+  margin: 0;
+  font-family: monospace; 
+  font: normal 16px sans-serif;
+  padding: 50px 0; 
+
+}
+
+/* Menú horizontal con transiciones */
+/* En este menú se ha creado una línea horizontal de colores diferentes encima de cada enlace.  */
+/* Se incluye una transición para cambiar el ancho de esa línea al 100% del contenedor de forma gradual*/
+/* Formato general de cada item */
+
+
+#main,
+#main ul,
+#main li,
+#main a {
+    margin: 0;
+    padding: 2;
+    border: 0;    
+    font-weight: normal;
+    text-decoration: none;
+    line-height: 1;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    position: relative;   
+}
+
+/*
+#main{
+    /*width: 250;
+    border-right: 1px solid #ececec;
+    */
+/*    
+}
+*/
+
+#main > ul > li {
+            background: #9C3334;
+            
+            /*
+            background: #9C3334;
+            background: -moz-linear-gradient(#9C3334 0%, #9C3334 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #9C3334), color-stop(100%, #9C3334));
+            background: -webkit-linear-gradient(#9C3334 0%, #9C3334 100%);
+            background: linear-gradient(#9C3334 0%, #9C3334 100%);
+            */
+            
+        }
+
+#main > ul > li a:hover {
+  
+        
+        background: #630505;
+        color: #34e710;
+
+        /*
+        background: -moz-linear-gradient(#630505 0%, #630505 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #630505), color-stop(100%, #630505));
+        background: -webkit-linear-gradient(#630505 0%, #630505 100%);
+        background: linear-gradient(#630505 0%, #630505 100%);
+        */
+        
+    }
+    
+li a {
+  display: inline;
+  text-decoration: none;
+  font-family: sans;
+  /*background: #0c73b8;*/
+  background: #ce774e;
+}
+
+#main > ul > li > a {
+  font-size: 14px;
+  display: block;
+  color:black;
+  border-top: none;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 2em;
+  padding: 0.6em 0 0.6em;
+
+}
+
+
+/* Estilo del enlace activo */
+#main ul li a.activo {
+  background-color: #630505;
+  color:white;
+}

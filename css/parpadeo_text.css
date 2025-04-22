@@ -1,0 +1,61 @@
+body {
+  background: #9C3334;
+
+  margin: 0;
+  font-family: monospace; 
+  font: normal 16px sans-serif;
+  padding: 5;   
+}
+
+.text {
+  top: 35%;
+  left: 7%;
+  position: absolute;
+  transform: translate(10%, 10%);
+  
+  font-size:28px;
+  font-family:helvetica;
+  font-weight:bold;
+  color:yellow;
+  text-transform:uppercase;
+}
+.parpadea {
+
+  animation-name: parpadeo;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-name:parpadeo;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@-moz-keyframes parpadeo{
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes parpadeo {
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+   100% { opacity: 1.0; }
+}
+
+@keyframes parpadeo {
+  0% { opacity: 1.0; }
+   50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+
+.logo {
+    width: 25%;
+    height: 20%;
+    }
+
+.logo img {
+    width: 80;
+    height: 70px;
+}

@@ -1,0 +1,47 @@
+<html>
+
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<title>MENU</title>
+	<link rel="stylesheet" href="css/style_option.css">
+
+
+</head>
+
+<body>
+
+	<header>
+
+
+		<div id="main">
+			<ul>
+				<li><a id="principal" href="principal.html" target="principal" class="activo"> Principal</a></li>
+				<li><a id="proyectos" href="proyectos.html" target="principal">Proyectos</a></li>
+				<li><a id="acerca_de" href="acerca_de.html" target="principal">Acerca de</a></li>
+				<li><a id="unete" href="unete.html" target="principal">Unete</a></li>
+				<li><a id="galeria" href="galeria.html" target="principal">Galeria</a></li>
+				<li><a id="contacto" href="contacto.html" target="principal">Contacto</a></li>
+			</ul>
+		</div>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				/* const enlaces = document.querySelectorAll("#main ul li a"); */
+				const enlaces = document.querySelectorAll("ul li a");
+
+				enlaces.forEach(enlace => {
+					enlace.addEventListener("click", function () {
+						enlaces.forEach(e => e.classList.remove("activo"));
+						this.classList.add("activo");
+					});
+				});
+			});
+		</script>
+		
+	</header>
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<html>
+
+<head>
+	<script type="text/javascript"> </script>
+
+	<script languaje="JavaScript">
+		var mydate = new Date()
+		var year = mydate.getYear()
+		if (year < 1000)
+			year += 1900
+		var day = mydate.getDay()
+		var month = mydate.getMonth()
+		var daym = mydate.getDate()
+		if (daym < 10)
+			daym = "0" + daym
+		var dayarray = new Array("Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado")
+		var montharray = new
+
+			Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre")
+		document.write("<div align='center'><small><font color='white' face='Arial'> Hoy es " + dayarray[day] + " " + daym + " de " + montharray[month] + " de " + year + "</font></small></div> ")
+		
+	</script>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<title>MENU</title>
+	
+	<link rel="stylesheet" href="css/parpadeo_text.css">
+
+	<style>
+		@keyframes girarY {
+			from {
+				transform: rotateY(0deg);
+			}
+
+			to {
+				transform: rotateY(360deg);
+			}
+		}
+
+		.rotar-y {
+			width: 200px;
+			height: auto;
+			animation: girarY 10s linear infinite;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<header>
+
+		<div class="container">
+			<div class="navbar navbar-static-top">
+				<div id="header-brand" class="navbar-header">
+
+					<div id="header">
+						<div>
+							<div class="logo">
+								<img src="imagen/proyectos/img_logo.png" class="rotar-y">
+							</div>
+
+							<span class="parpadea text">								
+								Seguridad Privada Villaes
+						</div>
+
+						 <div id="header-menu" class="collapse navbar-collapse" >
+							
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</header>
+
+</body>
+
+</html>
