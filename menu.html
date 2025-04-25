@@ -21,8 +21,9 @@
 			document.write("<div align='center'><small><font color='white' face='Arial'>"+
 			" Hoy es " + dayarray[day] + " "+ daym + " de " + montharray[month] + " de " + year + 			
 			
-			"  | UF: <span id='valorUF'>Cargando... </span> "+
-			"  | US: <span id='valorDolar'>Cargando...</span> |"  + 
+			"  | UF: <span id='valorUF'>000 </span> "+
+			"  | UTM: <span id='valorUTM'>000 </span> "+
+			"  | Dolar: <span id='valorDolar'>000</span> |"  + 
 
 			"</font></small></div> ")
 
@@ -44,11 +45,18 @@
 					currency: "CLP"
 					});
 
+					const valorUTM = datos.utm.valor.toLocaleString("es-CL", {
+					style: "currency",
+					currency: "CLP"
+					});					
+
 					document.getElementById("valorUF").textContent = valorUF;
 					document.getElementById("valorDolar").textContent = valorDolar;
+					document.getElementById("valorUTM").textContent = valorUTM;
 				} catch (error) {
 					document.getElementById("valorUF").textContent = "Error";
 					document.getElementById("valorDolar").textContent = "Error";
+					document.getElementById("valorUTM").textContent = "Error";
 					console.error("Error al obtener datos:", error);
 					}
     		}
