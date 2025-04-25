@@ -30,17 +30,16 @@
 			async function obtenerValores() 
 			{
 				try {
-					const respuesta_uf = await fetch("https://mindicador.cl/api/uf");
-					const respuesta_us = await fetch("https://mindicador.cl/api/dolar");
-					const datos_uf = await respuesta_uf.json();
-					const datos_us = await respuesta_us.json();
-
-					const valorUF = datos_uf.serie[0].valor.toLocaleString("es-CL", {
+					const respuesta = await fetch("https://mindicador.cl/api");
+					
+					const datos = await respuesta.json();
+					
+					const valorUF = datos.uf.valor.toLocaleString("es-CL", {
 					style: "currency",
 					currency: "CLP"
 					});
 
-					const valorDolar = datos_us.serie[0].valor.toLocaleString("es-CL", {
+					const valorDolar = datos.dolar.valor.toLocaleString("es-CL", {
 					style: "currency",
 					currency: "CLP"
 					});
