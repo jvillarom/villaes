@@ -1,6 +1,7 @@
 <html>
 
 <head>
+
 	<script type="text/javascript"> </script>
 
 	<script languaje="JavaScript">
@@ -17,8 +18,43 @@
 		var montharray = new
 
 			Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre")
-		document.write("<div align='center'><small><font color='white' face='Arial'> Hoy es " + dayarray[day] + " " + daym + " de " + montharray[month] + " de " + year + "</font></small></div> ")
+			document.write("<div align='center'><small><font color='white' face='Arial'>"+
+			" Hoy es " + dayarray[day] + " "+ daym + " de " + montharray[month] + " de " + year + 			
+			
+			"  | UF: <span id='valorUF'>Cargando... </span> "+
+			"  | US: <span id='valorDolar'>Cargando...</span> |"  + 
+
+			"</font></small></div> ")
+
 		
+			async function obtenerValores() 
+			{
+				try {
+					const respuesta_uf = await fetch("https://mindicador.cl/api/uf");
+					const respuesta_us = await fetch("https://mindicador.cl/api/dolar");
+					const datos_uf = await respuesta_uf.json();
+					const datos_us = await respuesta_us.json();
+
+					const valorUF = datos_uf.serie[0].valor.toLocaleString("es-CL", {
+					style: "currency",
+					currency: "CLP"
+					});
+
+					const valorDolar = datos_us.serie[0].valor.toLocaleString("es-CL", {
+					style: "currency",
+					currency: "CLP"
+					});
+
+					document.getElementById("valorUF").textContent = valorUF;
+					document.getElementById("valorDolar").textContent = valorDolar;
+				} catch (error) {
+					document.getElementById("valorUF").textContent = "Error";
+					document.getElementById("valorDolar").textContent = "Error";
+					console.error("Error al obtener datos:", error);
+					}
+    		}
+
+    obtenerValores();	
 	</script>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -39,7 +75,7 @@
 		}
 
 		.rotar-y {
-			width: 200px;
+			width: 100px;
 			height: auto;
 			animation: girarY 10s linear infinite;
 		}
@@ -48,7 +84,7 @@
 </head>
 
 <body>
-
+<!--
 	<header>
 
 		<div class="container">
@@ -75,7 +111,24 @@
 		</div>
 
 	</header>
+-->
+<header>
+		
+					<div>
+						<div class="logo">
+							<img src="imagen/proyectos/img_logo.png" class="rotar-y">
+						</div>
 
+						<span class="parpadea text">								
+							Seguridad Privada Villaes
+						</span>
+					</div>
+
+
+		
+
+
+</header>	
 </body>
 
 </html>
