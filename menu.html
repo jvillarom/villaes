@@ -21,9 +21,9 @@
 			document.write("<div align='center'><small><font color='white' face='Arial'>"+
 			" Hoy es " + dayarray[day] + " "+ daym + " de " + montharray[month] + " de " + year + 			
 			
-			"  | UF: <span id='valorUF'>000 </span> "+
-			"  | UTM: <span id='valorUTM'>000 </span> "+
-			"  | Dolar: <span id='valorDolar'>000</span> |"  + 
+			"  | UF: <span id='valorUF'>0.0000 </span> "+
+			"  | UTM: <span id='valorUTM'>0.0000 </span> "+
+			"  | Dolar: <span id='valorDolar'>0.0000</span> |"  + 
 
 			"</font></small></div> ")
 
@@ -35,17 +35,17 @@
 					
 					const datos = await respuesta.json();
 					
-					const valorUF = datos.uf.valor.toLocaleString("es-CL", {
+					const valorUF = datos.uf.valor.toFixed(2).toLocaleString("es-CL", {
 					style: "currency",
 					currency: "CLP"
 					});
 
-					const valorDolar = datos.dolar.valor.toLocaleString("es-CL", {
+					const valorDolar = datos.dolar.valor.toFixed(2).toLocaleString("es-CL", {
 					style: "currency",
 					currency: "CLP"
 					});
 
-					const valorUTM = datos.utm.valor.toLocaleString("es-CL", {
+					const valorUTM = datos.utm.valor.toFixed(2).toLocaleString("es-CL", {
 					style: "currency",
 					currency: "CLP"
 					});					
